@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan Sistem - Kelompok 5</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { primary: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 700: '#15803d' } }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <div class="flex h-screen overflow-hidden">
+        
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white border-r border-slate-200 hidden md:flex flex-col flex-shrink-0 z-10 shadow-sm">
+            <div class="h-16 flex items-center px-6 border-b border-slate-200">
+                <i class="ph-fill ph-hand-heart text-primary-600 text-3xl mr-2"></i>
+                <span class="text-xl font-bold text-slate-800 tracking-tight">CrowdFund</span>
+            </div>
+            
+            <div class="p-4 flex-1 overflow-y-auto">
+                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4 px-2">Menu Utama</p>
+                <nav class="space-y-1">
+                    <a href="dashboard.html" class="flex items-center px-3 py-2.5 text-slate-600 hover:bg-slate-50 rounded-lg font-medium transition-colors">
+                        <i class="ph ph-squares-four text-xl mr-3"></i> Dashboard
+                    </a>
+                    <a href="buat-campaign.html" class="flex items-center px-3 py-2.5 text-slate-600 hover:bg-slate-50 rounded-lg font-medium transition-colors">
+                        <i class="ph ph-plus-circle text-xl mr-3"></i> Buat Campaign
+                    </a>
+                    <a href="campaign-saya.html" class="flex items-center px-3 py-2.5 text-slate-600 hover:bg-slate-50 rounded-lg font-medium transition-colors">
+                        <i class="ph ph-megaphone text-xl mr-3"></i> Campaign Saya
+                    </a>
+                    <a href="riwayat-donasi.html" class="flex items-center px-3 py-2.5 text-slate-600 hover:bg-slate-50 rounded-lg font-medium transition-colors">
+                        <i class="ph ph-wallet text-xl mr-3"></i> Riwayat Donasi
+                    </a>
+                </nav>
+
+                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-8 mb-4 px-2">Pengaturan</p>
+                <nav class="space-y-1">
+                    <a href="pengaturan-sistem.html" class="flex items-center px-3 py-2.5 bg-primary-50 text-primary-700 rounded-lg font-medium transition-colors">
+                        <i class="ph ph-gear text-xl mr-3"></i> Pengaturan Sistem
+                    </a>
+                </nav>
+            </div>
+            
+            <div class="p-4 border-t border-slate-200">
+                <a href="pengaturan-sistem.html" class="flex items-center w-full p-2 hover:bg-slate-50 rounded-lg transition-colors group">
+                    <div class="w-9 h-9 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold text-sm mr-3">
+                        <i class="ph-fill ph-user text-lg"></i>
+                    </div>
+                    <div class="flex-1 text-left">
+                        <p class="text-sm font-semibold text-slate-900 group-hover:text-primary-600">Ahmad Rizki</p>
+                        <p class="text-xs text-slate-500">Donatur Aktif</p>
+                    </div>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Area -->
+        <div class="flex-1 flex flex-col h-screen overflow-hidden">
+            <!-- Header -->
+            <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-6 lg:px-8 shadow-sm">
+                <button class="md:hidden p-2 text-slate-500 hover:bg-slate-100 rounded-lg">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
+
+                <div class="hidden sm:flex items-center bg-slate-100 rounded-lg px-3 py-2 w-96 transition-all focus-within:ring-2 focus-within:ring-primary-500 focus-within:bg-white">
+                    <i class="ph ph-magnifying-glass text-slate-400 text-lg"></i>
+                    <input type="text" placeholder="Cari campaign atau donatur..." class="bg-transparent border-none focus:outline-none ml-2 w-full text-sm text-slate-700 placeholder-slate-400">
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button class="relative p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-colors">
+                            <i class="ph ph-bell text-xl"></i>
+                            <span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white"></span>
+                        </button>
+                    </div>
+                    <div class="h-8 w-px bg-slate-200"></div>
+                    <button class="flex items-center space-x-2 p-1 rounded-full hover:bg-slate-50 transition-colors">
+                        <div class="w-8 h-8 rounded-full bg-primary-600 flex items-center justify-center text-white font-bold text-xs">AR</div>
+                        <span class="text-sm font-medium text-slate-700 hidden sm:block">Ahmad Rizki</span>
+                    </button>
+                </div>
+            </header>
+
+            <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-slate-50/50">
+                <div class="mb-8">
+                    <h1 class="text-2xl font-bold text-slate-900">Pengaturan Sistem</h1>
+                    <p class="text-sm text-slate-500 mt-1">Kelola profil, notifikasi, dan preferensi aplikasi.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="lg:col-span-2 space-y-6">
+                        
+                        <!-- Profil Form -->
+                        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                            <h2 class="text-lg font-bold text-slate-900 mb-4">Profil Pengguna</h2>
+                            <form class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-700 mb-2">Nama Lengkap</label>
+                                        <input type="text" class="w-full px-4 py-3 border border-slate-300 rounded-xl text-sm outline-none focus:border-primary-500" value="Ahmad Rizki">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-700 mb-2">Email</label>
+                                        <input type="email" class="w-full px-4 py-3 border border-slate-300 rounded-xl text-sm bg-slate-100 text-slate-500 cursor-not-allowed" value="ahmadrizki@email.com" disabled>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-700 mb-2">No. Telepon</label>
+                                        <input type="text" class="w-full px-4 py-3 border border-slate-300 rounded-xl text-sm outline-none focus:border-primary-500" value="081234567890">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold text-slate-700 mb-2">Role</label>
+                                        <input type="text" class="w-full px-4 py-3 border border-slate-300 rounded-xl text-sm bg-slate-100 text-slate-500 cursor-not-allowed" value="Donatur" disabled>
+                                    </div>
+                                </div>
+                                <div class="flex justify-end">
+                                    <button type="button" class="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors">Simpan Perubahan</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Notification Form -->
+                        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                            <h2 class="text-lg font-bold text-slate-900 mb-4">Preferensi Notifikasi</h2>
+                            <form class="space-y-4">
+                                <label class="flex items-center justify-between cursor-pointer">
+                                    <div>
+                                        <p class="text-sm font-semibold text-slate-700">Notifikasi Donasi</p>
+                                        <p class="text-xs text-slate-500">Dapatkan info setiap donasi masuk ke campaign Anda.</p>
+                                    </div>
+                                    <input type="checkbox" class="h-5 w-5 text-primary-600" checked>
+                                </label>
+                                <label class="flex items-center justify-between cursor-pointer">
+                                    <div>
+                                        <p class="text-sm font-semibold text-slate-700">Pengingat Campaign</p>
+                                        <p class="text-xs text-slate-500">Ingatkan ketika campaign donasi pilihan hampir selesai.</p>
+                                    </div>
+                                    <input type="checkbox" class="h-5 w-5 text-primary-600" checked>
+                                </label>
+                                <label class="flex items-center justify-between cursor-pointer">
+                                    <div>
+                                        <p class="text-sm font-semibold text-slate-700">Newsletter</p>
+                                        <p class="text-xs text-slate-500">Update platform dan laporan transparansi bulanan.</p>
+                                    </div>
+                                    <input type="checkbox" class="h-5 w-5 text-primary-600">
+                                </label>
+                                <div class="flex justify-end pt-2">
+                                    <button type="button" class="border border-slate-200 text-slate-600 px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-50">Simpan Preferensi</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="space-y-6">
+                        <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                            <h2 class="text-lg font-bold text-slate-900 mb-4">Ringkasan Akun</h2>
+                            <div class="space-y-4 text-sm text-slate-600">
+                                <div class="flex items-center justify-between">
+                                    <span>Status Akun</span>
+                                    <span class="text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded">Aktif</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span>Terakhir Login</span>
+                                    <span class="text-slate-700 font-medium">Hari ini, 10:24</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span>Metode Daftar</span>
+                                    <span class="text-slate-700 font-medium">Google SSO</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-primary-600 to-emerald-700 text-white rounded-2xl p-6 shadow-lg">
+                            <h3 class="text-lg font-bold mb-2">Butuh Bantuan?</h3>
+                            <p class="text-sm text-white/80 mb-4">Tim support Kelompok 5 siap membantu Anda mengelola data.</p>
+                            <button class="bg-white text-primary-700 px-4 py-2.5 rounded-lg text-sm font-semibold w-full hover:bg-slate-50">Hubungi CS</button>
+                        </div>
+                        
+                        <button onclick="window.location.href='index.html'" class="w-full bg-red-50 text-red-600 border border-red-100 hover:bg-red-100 px-4 py-3 rounded-xl font-bold transition-colors">
+                            Keluar Akun (Logout)
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

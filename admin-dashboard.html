@@ -4,178 +4,212 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Kelompok 5</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="/js/tailwind-config.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: { primary: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 700: '#15803d' } }
+                    colors: {
+                        primary: { 50: '#f0fdf4', 100: '#dcfce7', 500: '#22c55e', 600: '#16a34a', 700: '#15803d' }
+                    }
                 }
             }
         }
     </script>
-</head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
-
     <div class="flex h-screen overflow-hidden">
         
-        <!-- Sidebar Admin -->
-        <aside class="w-64 bg-slate-900 border-r border-slate-800 hidden md:flex flex-col flex-shrink-0 z-10 shadow-sm text-slate-300">
-            <div class="h-16 flex items-center px-6 border-b border-slate-800">
-                <i class="ph-fill ph-shield-check text-emerald-400 text-3xl mr-2"></i>
-                <span class="text-xl font-bold text-white tracking-tight">AdminPanel</span>
-            </div>
+
+
+<aside class="w-64 bg-white border-r border-slate-200 hidden md:flex flex-col flex-shrink-0 z-10 shadow-sm">
+    <div class="h-16 flex items-center px-6 border-b border-slate-200">
+        <i class="ph-fill ph-hand-heart text-primary-600 text-3xl mr-2"></i>
+        <span class="text-xl font-bold text-slate-800 tracking-tight">CrowdFund</span>
+    </div>
+
+    <div class="p-4 flex-1 overflow-y-auto">
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4 px-2">Menu Utama</p>
+        <nav class="space-y-1">
+            <a href="/dashboard.html" class="flex items-center px-3 py-2.5 rounded-lg font-medium transition-colors text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+                <i class="ph ph-squares-four text-xl mr-3"></i> Dashboard
+            </a>
+            <a href="/buat-campaign.html" class="flex items-center px-3 py-2.5 rounded-lg font-medium transition-colors text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+                <i class="ph ph-plus-circle text-xl mr-3"></i> Buat Campaign
+            </a>
+            <a href="/campaign-saya.html" class="flex items-center px-3 py-2.5 rounded-lg font-medium transition-colors text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+                <i class="ph ph-megaphone text-xl mr-3"></i> Campaign Saya
+            </a>
+            <a href="/riwayat-donasi.html" class="flex items-center px-3 py-2.5 rounded-lg font-medium transition-colors text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+                <i class="ph ph-wallet text-xl mr-3"></i> Riwayat Donasi
+            </a>
+        </nav>
+
+        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-8 mb-4 px-2">Pengaturan</p>
+        <nav class="space-y-1">
+            <a href="/pengaturan-sistem.html" class="flex items-center px-3 py-2.5 rounded-lg font-medium transition-colors text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+                <i class="ph ph-gear text-xl mr-3"></i> Pengaturan Sistem
+            </a>
             
-            <div class="p-4 flex-1 overflow-y-auto">
-                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4 px-2">Menu Pusat</p>
-                <nav class="space-y-1">
-                    <a href="#" class="flex items-center px-3 py-2.5 bg-primary-600 text-white rounded-lg font-medium transition-colors">
-                        <i class="ph ph-squares-four text-xl mr-3"></i> Dashboard Utama
-                    </a>
-                    <a href="#" class="flex items-center px-3 py-2.5 hover:bg-slate-800 hover:text-white rounded-lg font-medium transition-colors">
-                        <i class="ph ph-megaphone text-xl mr-3"></i> Persetujuan Campaign
-                    </a>
-                    <a href="#" class="flex items-center px-3 py-2.5 hover:bg-slate-800 hover:text-white rounded-lg font-medium transition-colors">
-                        <i class="ph ph-users text-xl mr-3"></i> Manajemen User
-                    </a>
-                    <a href="#" class="flex items-center px-3 py-2.5 hover:bg-slate-800 hover:text-white rounded-lg font-medium transition-colors">
-                        <i class="ph ph-file-text text-xl mr-3"></i> Laporan Donasi
-                    </a>
-                </nav>
-            </div>
-            
-            <div class="p-4 border-t border-slate-800">
-                <a href="index.html" class="flex items-center w-full p-2 hover:bg-slate-800 rounded-lg transition-colors group">
-                    <div class="w-9 h-9 rounded-full bg-slate-700 flex items-center justify-center text-white font-bold text-sm mr-3">
-                        <i class="ph-fill ph-sign-out text-lg"></i>
-                    </div>
-                    <div class="flex-1 text-left">
-                        <p class="text-sm font-semibold text-white group-hover:text-red-400 transition-colors">Keluar Sistem</p>
-                    </div>
+                <a href="/admin.html" class="flex items-center px-3 py-2.5 rounded-lg font-medium transition-colors text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+                    <i class="ph ph-shield-check text-xl mr-3"></i> Admin Dashboard
                 </a>
+            
+        </nav>
+    </div>
+
+    <div class="p-4 border-t border-slate-200">
+        <div class="flex items-center w-full p-2 rounded-lg">
+            <div class="w-9 h-9 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 font-bold text-sm mr-3">
+                <span>BS</span>
             </div>
-        </aside>
+            <div class="flex-1 text-left">
+                <p class="text-sm font-semibold text-slate-900">Profil Saya</p>
+                <p class="text-xs text-slate-500">Budi Santoso</p>
+            </div>
+        </div>
+        <a href="/logout.html" class="mt-2 block text-xs font-semibold text-slate-500 hover:text-primary-600">Logout</a>
+    </div>
+</aside>
 
-        <!-- Main Area -->
+
         <div class="flex-1 flex flex-col h-screen overflow-hidden">
-            <!-- Header -->
-            <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-6 lg:px-8 z-10 shadow-sm">
-                <button class="md:hidden p-2 text-slate-500 hover:bg-slate-100 rounded-lg">
-                    <i class="ph ph-list text-2xl"></i>
-                </button>
+            
 
-                <div class="hidden sm:flex items-center bg-slate-100 rounded-lg px-3 py-2 w-96 transition-all focus-within:ring-2 focus-within:ring-primary-500 focus-within:bg-white">
-                    <i class="ph ph-magnifying-glass text-slate-400 text-lg"></i>
-                    <input type="text" placeholder="Cari campaign atau donatur..." class="bg-transparent border-none focus:outline-none ml-2 w-full text-sm text-slate-700 placeholder-slate-400">
-                </div>
+<header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-6 lg:px-8 z-10 shadow-sm">
+    <button class="md:hidden p-2 text-slate-500 hover:bg-slate-100 rounded-lg">
+        <i class="ph ph-list text-2xl"></i>
+    </button>
 
-                <div class="flex items-center space-x-4">
-                    <div class="relative">
-                        <button id="notificationButtonAdmin" class="relative p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-colors">
-                            <i class="ph ph-bell text-xl"></i>
-                            <span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white"></span>
-                        </button>
+    <div class="hidden sm:flex items-center bg-slate-100 rounded-lg px-3 py-2 w-96 transition-all focus-within:ring-2 focus-within:ring-primary-500 focus-within:bg-white">
+        <i class="ph ph-magnifying-glass text-slate-400 text-lg"></i>
+        <input type="text" placeholder="Cari campaign atau donatur..." class="bg-transparent border-none focus:outline-none ml-2 w-full text-sm text-slate-700 placeholder-slate-400">
+    </div>
+
+    <div class="flex items-center space-x-4">
+        <div class="relative">
+            <button id="notificationButton" class="relative p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-colors" aria-haspopup="true" aria-expanded="false">
+                <i class="ph ph-bell text-xl"></i>
+                <span id="notificationDot" class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white"></span>
+            </button>
+            <div id="notificationPanel" class="hidden absolute right-0 mt-3 w-80 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden z-20">
+                <div class="px-4 py-3 border-b border-slate-100 flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-semibold text-slate-900">Notifikasi</p>
+                        <p class="text-xs text-slate-500">Update terbaru untuk akunmu</p>
                     </div>
-                    <div class="h-8 w-px bg-slate-200"></div>
-                    <button class="flex items-center space-x-2 p-1 rounded-full hover:bg-slate-50 transition-colors">
-                        <div class="w-8 h-8 rounded-full bg-primary-600 flex items-center justify-center text-white font-bold text-xs">AD</div>
-                        <span class="text-sm font-medium text-slate-700 hidden sm:block">Admin Pusat</span>
-                    </button>
+                    <button id="notificationMarkRead" class="text-xs font-semibold text-primary-600 hover:text-primary-700">Tandai dibaca</button>
                 </div>
-            </header>
+                <div id="notificationList" class="max-h-72 overflow-y-auto">
+                    <div class="px-4 py-3 border-b border-slate-100 bg-primary-50/40">
+                        <p class="text-sm font-semibold text-slate-900">Donasi baru masuk</p>
+                        <p class="text-xs text-slate-500">Rp 50.000 untuk campaign Bantuan Medis</p>
+                        <p class="text-[11px] text-slate-400 mt-1">Baru saja</p>
+                    </div>
+                    <div class="px-4 py-3 border-b border-slate-100">
+                        <p class="text-sm font-semibold text-slate-900">Campaign disetujui</p>
+                        <p class="text-xs text-slate-500">Campaign kamu sudah aktif di halaman utama.</p>
+                        <p class="text-[11px] text-slate-400 mt-1">2 jam lalu</p>
+                    </div>
+                    <div class="px-4 py-3">
+                        <p class="text-sm font-semibold text-slate-900">Pengingat campaign</p>
+                        <p class="text-xs text-slate-500">Sisa 3 hari untuk campaign Pendidikan.</p>
+                        <p class="text-[11px] text-slate-400 mt-1">Kemarin</p>
+                    </div>
+                </div>
+                <div class="px-4 py-3 border-t border-slate-100 bg-slate-50">
+                    <a href="/riwayat-donasi.html" class="text-xs font-semibold text-slate-600 hover:text-primary-600">Lihat semua aktivitas</a>
+                </div>
+            </div>
+        </div>
+        <a href="/logout.html" class="text-sm font-semibold text-slate-600 hover:text-primary-600">Logout</a>
+        <div class="h-8 w-px bg-slate-200"></div>
+        <button class="flex items-center space-x-2 p-1 rounded-full hover:bg-slate-50 transition-colors">
+            <div class="w-8 h-8 rounded-full bg-primary-600 flex items-center justify-center text-white font-bold text-xs">BS</div>
+            <span class="text-sm font-medium text-slate-700 hidden sm:block">Budi Santoso</span>
+            <i class="ph ph-caret-down text-slate-400 text-xs hidden sm:block"></i>
+        </button>
+    </div>
+</header>
+
 
             <main class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-slate-50/50">
-                <div class="mb-8">
-                    <h1 class="text-2xl font-bold text-slate-900">Admin Dashboard</h1>
-                    <p class="text-sm text-slate-500 mt-1">Kelola campaign, user, dan pantau aktivitas donasi secara menyeluruh.</p>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-8">
+                    <div>
+                        <h1 class="text-2xl font-bold text-slate-900">Admin Dashboard</h1>
+                        <p class="text-sm text-slate-500 mt-1">Kelola campaign, user, dan aktivitas donasi.</p>
+                    </div>
                 </div>
 
-                <!-- Stats -->
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 border-l-4 border-l-blue-500">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8" id="adminSummary">
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
                         <p class="text-sm font-medium text-slate-500 mb-1">Total Users</p>
-                        <h3 class="text-3xl font-bold text-slate-900">1,248</h3>
+                        <h3 class="text-3xl font-bold text-slate-900">0</h3>
                     </div>
-                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 border-l-4 border-l-emerald-500">
-                        <p class="text-sm font-medium text-slate-500 mb-1">Campaign Aktif</p>
-                        <h3 class="text-3xl font-bold text-slate-900">12</h3>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                        <p class="text-sm font-medium text-slate-500 mb-1">Users Aktif</p>
+                        <h3 class="text-3xl font-bold text-slate-900">0</h3>
                     </div>
-                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 border-l-4 border-l-amber-500">
-                        <p class="text-sm font-medium text-slate-500 mb-1">Menunggu Review</p>
-                        <h3 class="text-3xl font-bold text-slate-900">2</h3>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                        <p class="text-sm font-medium text-slate-500 mb-1">Campaign Pending</p>
+                        <h3 class="text-3xl font-bold text-slate-900">0</h3>
                     </div>
-                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 border-l-4 border-l-primary-600">
-                        <p class="text-sm font-medium text-slate-500 mb-1">Total Transaksi</p>
-                        <h3 class="text-3xl font-bold text-slate-900">Rp 45.5 M</h3>
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                        <p class="text-sm font-medium text-slate-500 mb-1">Total Donasi</p>
+                        <h3 class="text-3xl font-bold text-slate-900">Rp 0</h3>
                     </div>
                 </div>
 
-                <!-- Tables Section -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                    <!-- Approval List -->
                     <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
                         <div class="flex items-center justify-between mb-4">
                             <h2 class="text-lg font-bold text-slate-900">Persetujuan Campaign</h2>
-                            <button class="text-xs text-primary-600 font-semibold">Lihat Semua</button>
+                            <span class="text-xs text-slate-400">Klik approve/reject untuk mengubah status</span>
                         </div>
-                        <div class="space-y-4">
-                            <!-- Item 1 -->
-                            <div class="flex items-center justify-between p-3 border border-slate-100 rounded-xl bg-slate-50">
-                                <div>
-                                    <p class="font-bold text-sm text-slate-900">Bangun Masjid Desa</p>
-                                    <p class="text-xs text-slate-500">Oleh: Budi Santoso</p>
-                                </div>
-                                <div class="flex space-x-2">
-                                    <button class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center hover:bg-emerald-200"><i class="ph-bold ph-check"></i></button>
-                                    <button class="w-8 h-8 rounded-lg bg-red-100 text-red-600 flex items-center justify-center hover:bg-red-200"><i class="ph-bold ph-x"></i></button>
-                                </div>
-                            </div>
-                            <!-- Item 2 -->
-                            <div class="flex items-center justify-between p-3 border border-slate-100 rounded-xl bg-slate-50">
-                                <div>
-                                    <p class="font-bold text-sm text-slate-900">Bantu Modal UMKM</p>
-                                    <p class="text-xs text-slate-500">Oleh: Siti Aminah</p>
-                                </div>
-                                <div class="flex space-x-2">
-                                    <button class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center hover:bg-emerald-200"><i class="ph-bold ph-check"></i></button>
-                                    <button class="w-8 h-8 rounded-lg bg-red-100 text-red-600 flex items-center justify-center hover:bg-red-200"><i class="ph-bold ph-x"></i></button>
-                                </div>
+                        <div class="space-y-4" id="adminCampaignList">
+                            <div class="text-center py-8 bg-slate-50 rounded-2xl border border-slate-100">
+                                <div class="animate-spin rounded-full h-8 w-8 border-4 border-primary-500 border-t-transparent mx-auto mb-3"></div>
+                                <p class="text-slate-500 font-medium">Memuat data campaign...</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- User List -->
                     <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
                         <div class="flex items-center justify-between mb-4">
-                            <h2 class="text-lg font-bold text-slate-900">User Baru Terdaftar</h2>
+                            <h2 class="text-lg font-bold text-slate-900">Manajemen User</h2>
+                            <span class="text-xs text-slate-400">Ubah role dan status akun</span>
                         </div>
-                        <div class="space-y-4">
-                            <div class="flex items-center p-2 hover:bg-slate-50 rounded-lg">
-                                <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm mr-3">AR</div>
-                                <div class="flex-1">
-                                    <p class="font-bold text-sm text-slate-900">Ahmad Rizki</p>
-                                    <p class="text-xs text-slate-500">ahmad@email.com</p>
-                                </div>
-                                <span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-xs font-bold">Donatur</span>
+                        <div class="space-y-4" id="adminUserList">
+                            <div class="text-center py-8 bg-slate-50 rounded-2xl border border-slate-100">
+                                <div class="animate-spin rounded-full h-8 w-8 border-4 border-primary-500 border-t-transparent mx-auto mb-3"></div>
+                                <p class="text-slate-500 font-medium">Memuat data user...</p>
                             </div>
-                            <div class="flex items-center p-2 hover:bg-slate-50 rounded-lg">
-                                <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-sm mr-3">DK</div>
-                                <div class="flex-1">
-                                    <p class="font-bold text-sm text-slate-900">Dian Kusuma</p>
-                                    <p class="text-xs text-slate-500">dian@email.com</p>
-                                </div>
-                                <span class="bg-emerald-100 text-emerald-700 px-2 py-1 rounded text-xs font-bold">Donatur</span>
-                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-lg font-bold text-slate-900">Riwayat Donasi</h2>
+                        <span class="text-xs text-slate-400">Terbaru</span>
+                    </div>
+                    <div class="space-y-4" id="adminDonationList">
+                        <div class="text-center py-8 bg-slate-50 rounded-2xl border border-slate-100">
+                            <div class="animate-spin rounded-full h-8 w-8 border-4 border-primary-500 border-t-transparent mx-auto mb-3"></div>
+                            <p class="text-slate-500 font-medium">Memuat data donasi...</p>
                         </div>
                     </div>
                 </div>
             </main>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script src="/js/app.js" defer></script>
 </body>
 </html>

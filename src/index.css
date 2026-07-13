@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  
+  --color-primary-50: #f0fdf4;
+  --color-primary-100: #dcfce7;
+  --color-primary-500: #22c55e;
+  --color-primary-600: #16a34a;
+  --color-primary-700: #15803d;
+}
+
+@utility modal-backdrop {
+  backdrop-filter: blur(4px);
+  transition-property: opacity;
+  transition-duration: 300ms;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+}

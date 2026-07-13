@@ -1,75 +1,16 @@
-# CrowdFund Frontend
+# React + Vite
 
-Frontend aplikasi crowdfunding untuk final project Kelompok 5. Proyek ini dibuat dengan HTML, Tailwind CSS CDN, CSS kustom, dan JavaScript client-side.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## Struktur Folder
+Currently, two official plugins are available:
 
-```text
-frontend/
-|-- index.html
-|-- login.html
-|-- register.html
-|-- dashboard.html
-|-- detail-campaign.html
-|-- admin-dashboard.html
-|-- buat-campaign.html
-|-- campaign-saya.html
-|-- riwayat-donasi.html
-|-- pengaturan-sistem.html
-|-- css/
-|   `-- style.css
-`-- js/
-    |-- app.js
-    `-- tailwind-config.js
-```
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Halaman
+## React Compiler
 
-- `index.html` - halaman utama atau landing page.
-- `login.html` - halaman masuk pengguna.
-- `register.html` - halaman daftar akun.
-- `dashboard.html` - dashboard pengguna.
-- `detail-campaign.html` - detail campaign dan simulasi donasi.
-- `buat-campaign.html` - form pembuatan campaign.
-- `campaign-saya.html` - daftar campaign milik pengguna.
-- `riwayat-donasi.html` - riwayat donasi.
-- `pengaturan-sistem.html` - halaman pengaturan sistem.
-- `admin-dashboard.html` - dashboard admin.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Asset
+## Expanding the Oxlint configuration
 
-- `css/style.css` berisi style tambahan seperti scrollbar, animasi toast, modal, dan input number.
-- `js/app.js` berisi interaksi client-side seperti modal donasi, toast, nominal donasi, dan panel notifikasi.
-- `js/tailwind-config.js` berisi konfigurasi tema Tailwind yang digunakan bersama oleh semua halaman.
-
-## Koneksi Desain
-
-Semua halaman HTML sudah terhubung dengan asset desain berikut:
-
-```html
-<script src="/js/tailwind-config.js"></script>
-<link rel="stylesheet" href="/css/style.css">
-<script src="/js/app.js" defer></script>
-```
-
-Link navigasi lokal juga sudah diarahkan ke halaman yang tersedia di proyek, sehingga halaman dapat dibuka sebagai frontend statis.
-
-## Cara Menjalankan
-
-Karena halaman menggunakan path absolut seperti `/css/style.css` dan `/js/app.js`, jalankan proyek melalui local server.
-
-Contoh dengan Python:
-
-```bash
-python -m http.server 5500
-```
-
-Lalu buka:
-
-```text
-http://localhost:5500/
-```
-
-## Catatan
-
-Data pada aplikasi masih berupa dummy data untuk kebutuhan tampilan dan simulasi interaksi frontend.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
